@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PyPDF2 import PdfReader
 import re
-import mysql.connector
 import psycopg2
 import os
 from flask import send_from_directory
@@ -28,14 +27,14 @@ JOB_ROLES = {
 
 @app.route("/")
 def home():
-    return send_from_directory("../frontend", "front.html")
+    return send_from_directory("frontend", "front.html")
 @app.route("/style.css")
 def style():
-    return send_from_directory("../frontend", "style.css")
+    return send_from_directory("frontend", "style.css")
 
 @app.route("/script.js")
 def script():
-    return send_from_directory("../frontend", "script.js")
+    return send_from_directory("frontend", "script.js")
 
 @app.route("/analyze", methods=["POST"])
 def analyze_resume():
