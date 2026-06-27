@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Resume Analyzer</h1>
+
+        <p>
+            Upload your resume and get instant AI-powered analysis
+        </p>
+
+        <div class="upload-box" id="uploadsection">
+            <label for="resumeFile" class="custom-file-upload"> 📄 Choose Resume</label>
+            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" hidden>
+            <br><br>
+
+            <button onclick="uploadResume()">
+                Analyze Resume
+            </button>
+        </div>
+
+        <div id="result" class="result" style="display:none;">
+
+            <h2>Analysis Result</h2>
+            <h3 style="color:aliceblue">Name</h3>
+            <p id="name"></p>
+
+            <h3 style="color:aliceblue">Email</h3>
+            <p id="email"></p>
+
+            <h3 style="color:aliceblue">Phone</h3>
+            <p id="phone"></p>
+
+            <div class="score-card">
+                <h3>Resume Score</h3>
+                <span id="score">0%</span>
+                <div class="progress-container">
+                    <div id="progress-bar">
+
+                    </div>
+                </div>
+                <div class="strength-card">
+                    <h3>Resume Strength</h3>
+                    <p id="strength"></p>
+                </div>
+            </div>
+
+            <div class="details">
+                <h3>Detected Skills</h3>
+                <ul id="skills">
+                </ul>
+
+                <h3>Missing Skills</h3>
+                <ul id="missingSkills"></ul>
+
+                <h3>Recommended Jobs</h3>
+                <ul id="jobs"></ul>
+
+                <h3>FeedBack</h3>
+                <ul id="feedback"></ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
